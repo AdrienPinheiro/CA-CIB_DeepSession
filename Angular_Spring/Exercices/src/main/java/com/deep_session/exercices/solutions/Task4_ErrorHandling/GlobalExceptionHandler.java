@@ -1,4 +1,4 @@
-package com.deep_session.exercices.Task4_ErrorHandling;
+package com.deep_session.exercices.solutions.Task4_ErrorHandling;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

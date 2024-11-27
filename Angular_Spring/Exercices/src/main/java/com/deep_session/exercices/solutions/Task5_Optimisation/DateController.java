@@ -1,4 +1,4 @@
-package com.deep_session.exercices.Task5_Optimisation;
+package com.deep_session.exercices.solutions.Task5_Optimisation;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/solution")
 public class DateController {
 
     /**

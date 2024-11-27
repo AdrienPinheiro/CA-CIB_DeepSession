@@ -1,4 +1,4 @@
-package com.deep_session.exercices.Task1_Hello;
+package com.deep_session.exercices.tasks.Task1_Hello;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.deep_session.exercices.Task3_Documentation;
+package com.deep_session.exercices.tasks.Task2_DaysBetween;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +11,9 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api/task3")
-public class Task3DocumentationController {
+@RequestMapping("/api/task2")
+public class Task2DaysBetweenController {
 
-    /**
-     * Calculates the number of days between two dates.
-     * @param startDate the start date in ISO format (yyyy-MM-dd)
-     * @param endDate the end date in ISO format (yyyy-MM-dd)
-     * @return the number of days between the two dates
-     */
     @GetMapping("/days-between")
     public ResponseEntity<?> daysBetween(
         @RequestParam String startDate,

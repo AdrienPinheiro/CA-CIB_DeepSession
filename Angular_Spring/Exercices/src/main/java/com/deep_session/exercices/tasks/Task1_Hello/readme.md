@@ -17,7 +17,7 @@ You need to create a REST controller in Spring Boot that responds to HTTP `GET` 
 
 ### File Structure
 ```plaintext
-src/main/java/com/deep_session/exercices/
+src/main/java/com/deep_session/exercices/tasks/
     └── Task1_Hello/
           └── Task1HelloController.java
 ```
@@ -28,7 +28,7 @@ src/main/java/com/deep_session/exercices/
 
 1. **Set Up the Directory**:
    - Navigate to the directory:  
-     `src/main/java/com/deep_session/exercices/`
+     `src/main/java/com/deep_session/exercices/tasks/`.
    - Create a new folder named `Task1_Hello`.
 
 2. **Create the Controller File**:
@@ -80,7 +80,7 @@ src/main/java/com/deep_session/exercices/
 ### Troubleshooting
 - **Error**: `The declared package does not match the expected package`:  
   Ensure the `Task1HelloController.java` file is placed in the folder:  
-  `src/main/java/com/deep_session/exercices/Task1_Hello/`.
+  `src/main/java/com/deep_session/exercices/tasks/Task1_Hello/`.
 
 - **Port Already in Use**:  
   If the application fails to start, check if another application is using port `8080` or modify the port in `application.properties`.

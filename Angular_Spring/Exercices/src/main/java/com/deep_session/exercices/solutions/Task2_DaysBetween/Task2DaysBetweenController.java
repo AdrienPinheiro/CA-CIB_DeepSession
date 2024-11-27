@@ -1,4 +1,4 @@
-package com.deep_session.exercices.Task2_DaysBetween;
+package com.deep_session.exercices.solutions.Task2_DaysBetween;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api/task2")
+@RequestMapping("/api/solution/task2")
 public class Task2DaysBetweenController {
 
     @GetMapping("/days-between")
