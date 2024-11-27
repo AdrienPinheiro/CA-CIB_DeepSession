@@ -14,23 +14,22 @@ import java.time.temporal.ChronoUnit;
 @RequestMapping("/api/solution/task2")
 public class Task2DaysBetweenControllerSolution {
 
-    @GetMapping("/days-between")
-    public ResponseEntity<?> daysBetween(
-        @RequestParam String startDate,
-        @RequestParam String endDate
-    ) {
-        try {
-            LocalDate start = LocalDate.parse(startDate);
-            LocalDate end = LocalDate.parse(endDate);
+  @GetMapping("/days-between")
+  public ResponseEntity<?> daysBetween(
+      @RequestParam String startDate,
+      @RequestParam String endDate) {
+    try {
+      LocalDate start = LocalDate.parse(startDate);
+      LocalDate end = LocalDate.parse(endDate);
 
-            if (start.isAfter(end)) {
-                return ResponseEntity.badRequest().body("startDate cannot be after endDate");
-            }
+      if (start.isAfter(end)) {
+        return ResponseEntity.badRequest().body("startDate cannot be after endDate");
+      }
 
-            long days = ChronoUnit.DAYS.between(start, end);
-            return ResponseEntity.ok(days);
-        } catch (DateTimeParseException e) {
-            return ResponseEntity.badRequest().body("Invalid date format. Use YYYY-MM-DD.");
-        }
+      long days = ChronoUnit.DAYS.between(start, end);
+      return ResponseEntity.ok(days);
+    } catch (DateTimeParseException e) {
+      return ResponseEntity.badRequest().body("Invalid date format. Use YYYY-MM-DD.");
     }
+  }
 }

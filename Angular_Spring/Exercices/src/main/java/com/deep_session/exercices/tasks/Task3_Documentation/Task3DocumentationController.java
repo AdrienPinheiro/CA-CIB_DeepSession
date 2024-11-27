@@ -15,7 +15,6 @@ import java.time.temporal.ChronoUnit;
 @RequestMapping("/api/task3")
 public class Task3DocumentationController {
 
-  
     @GetMapping("/days-between")
     public ResponseEntity<?> daysBetween(
         @RequestParam String startDate,
