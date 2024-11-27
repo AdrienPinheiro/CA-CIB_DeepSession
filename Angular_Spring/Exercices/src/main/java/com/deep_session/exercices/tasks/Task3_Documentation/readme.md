@@ -32,10 +32,7 @@ src/main/java/com/deep_session/exercices/tasks
 1. **Use GitHub Copilot to Add JavaDocs**:
    - Open `Task3DocumentationController.java`.
    - For each method, place your cursor above the method declaration.
-   - Use **Ctrl+I (Windows/Linux)** or **Cmd+I (Mac)** to open the Copilot prompt. Use prompts like:
-     ```
-     Generate JavaDocs for a method that calculates the number of days between two dates.
-     ```
+   - Use **Ctrl+I (Windows/Linux)** or **Cmd+I (Mac)** to open the Copilot prompt. Use the command `/doc` to generate JavaDocs.
    - Accept the suggested JavaDocs.
 
 #### **Part 2: Configure Swagger**
