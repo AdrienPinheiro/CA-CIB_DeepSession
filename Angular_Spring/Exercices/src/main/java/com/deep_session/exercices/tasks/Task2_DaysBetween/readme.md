@@ -68,6 +68,10 @@ src/main/java/com/deep_session/exercices/tasks
      ```
      9
      ```
+  
+3. **Generate the unit tests**:
+   - Open the chat window and use the `/test` command to generate unit tests for the endpoint. You will need to tag `@workspace` to give your assistant access to the project files.
+   - Review the generated tests and run them to validate the endpoint's functionality.
 
 ---
 
