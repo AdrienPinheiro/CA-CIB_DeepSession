@@ -26,15 +26,7 @@ src/main/java/com/deep_session/exercices/tasks/
 
 ### Step-by-Step Instructions
 
-1. **Set Up the Directory**:
-   - Navigate to the directory:  
-     `src/main/java/com/deep_session/exercices/tasks/`.
-   - Create a new folder named `Task1_Hello`.
-
-2. **Create the Controller File**:
-   - Inside the `Task1_Hello` directory, create a new Java file named `Task1HelloController.java`.
-
-3. **Use GitHub Copilot to Generate Code**:
+1. **Use GitHub Copilot to Generate Code**:
    - Open `Task1HelloController.java` in your editor (e.g., Visual Studio Code, IntelliJ IDEA).
    - Start by typing the following at the top of the file to define the package and import statements:
      ```java
@@ -50,7 +42,7 @@ src/main/java/com/deep_session/exercices/tasks/
        ```
    - Accept Copilot’s suggestions to generate the necessary code. 
 
-4. **Test the Generated Code**:
+2. **Test the Generated Code**:
    - Run the `DeepSessionExercicesApplication` class to start your Spring Boot application.
    - Use a browser or tool like Postman to access the endpoint:
      ```

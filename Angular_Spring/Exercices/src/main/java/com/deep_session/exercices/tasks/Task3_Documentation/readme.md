@@ -29,14 +29,7 @@ src/main/java/com/deep_session/exercices/tasks
 
 #### **Part 1: Add JavaDocs**
 
-1. **Set Up the Directory**:
-   - Navigate to `src/main/java/com/deep_session/exercices/tasks`.
-   - Create a new folder named `Task3_Documentation`.
-
-2. **Create the Controller File**:
-   - Inside `Task3_Documentation`, create a new file `Task3DocumentationController.java`.
-
-3. **Use GitHub Copilot to Add JavaDocs**:
+1. **Use GitHub Copilot to Add JavaDocs**:
    - Open `Task3DocumentationController.java`.
    - For each method, place your cursor above the method declaration.
    - Use **Ctrl+I (Windows/Linux)** or **Cmd+I (Mac)** to open the Copilot prompt. Use prompts like:
@@ -90,7 +83,3 @@ src/main/java/com/deep_session/exercices/tasks
 1. Add custom error messages to the Swagger documentation for validation errors.
 2. Explore how to secure the Swagger UI using Spring Security.
 3. Experiment with generating API client code using the OpenAPI specification.
-
----
-
-This task ensures students understand the value of documenting code and the power of tools like Swagger for API collaboration.
