@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/solution/task1")
-public class Task1HelloController {
+public class Task1HelloControllerSolution {
 
     @GetMapping("/hello")
     public String sayHello() {

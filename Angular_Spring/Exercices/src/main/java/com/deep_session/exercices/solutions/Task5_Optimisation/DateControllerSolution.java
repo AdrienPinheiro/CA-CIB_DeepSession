@@ -13,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 
 @RestController
 @RequestMapping("/api/solution")
-public class DateController {
+public class DateControllerSolution {
 
     /**
      * Validates the provided dates and ensures they are not null and follow the correct format.

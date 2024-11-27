@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.time.format.DateTimeParseException;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandlerSolution {
 
     /**
      * Handles exceptions related to invalid date formats.

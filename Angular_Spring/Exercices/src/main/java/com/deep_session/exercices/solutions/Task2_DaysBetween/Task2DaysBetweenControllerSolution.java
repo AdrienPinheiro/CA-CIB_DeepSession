@@ -12,7 +12,7 @@ import java.time.temporal.ChronoUnit;
 
 @RestController
 @RequestMapping("/api/solution/task2")
-public class Task2DaysBetweenController {
+public class Task2DaysBetweenControllerSolution {
 
     @GetMapping("/days-between")
     public ResponseEntity<?> daysBetween(

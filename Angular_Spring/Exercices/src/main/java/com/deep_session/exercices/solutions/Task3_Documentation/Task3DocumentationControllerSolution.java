@@ -12,7 +12,7 @@ import java.time.temporal.ChronoUnit;
 
 @RestController
 @RequestMapping("/api/solution/task3")
-public class Task3DocumentationController {
+public class Task3DocumentationControllerSolution {
 
     /**
      * Calculates the number of days between two dates.

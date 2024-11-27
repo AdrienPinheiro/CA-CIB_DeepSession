@@ -77,7 +77,7 @@ java -jar target/deep_session_exercices-0.0.1-SNAPSHOT.jar
 ---
 
 ### **4. Access the Endpoints**
-Each task's functionality is exposed as a REST API endpoint.
+Each task's functionality is exposed as a REST API endpoint. Of course, the functionality is not implemented yet (that's where you come in!). But you can access the endpoints to test your implementation.
 
 #### Example:
 - For **Task 1** (`Hello, Copilot!`):
