@@ -4,11 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie.model';
 
+// src/app/services/movie.service.ts
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = 'http://localhost:8080/api/movies'; // Update with your backend URL
+  private apiUrl = 'http://localhost:8081/movies'; // Ensure this matches your back-end server URL
 
   constructor(private http: HttpClient) {}
 

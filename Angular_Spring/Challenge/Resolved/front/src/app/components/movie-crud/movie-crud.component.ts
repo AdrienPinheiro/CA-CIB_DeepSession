@@ -15,7 +15,7 @@ import { Movie } from '../../models/movie.model';
 })
 export class MovieCrudComponent implements OnInit {
   movies: Movie[] = [];
-  movie: Movie = { id: 0, title: '', director: '', year: 0 };
+  movie: Movie = { id: 0, title: '', director: '', releaseYear: 0, version: 0 };
   isEdit = false;
 
   constructor(private movieService: MovieService) {}
@@ -32,10 +32,10 @@ export class MovieCrudComponent implements OnInit {
 
   addMovie(): void {
     this.movieService.createMovie(this.movie).subscribe((movie) => {
-      this.movies.push(movie);
-      this.resetForm();
+        this.movies.push(movie);
+        this.resetForm();
     });
-  }
+}
 
   editMovie(movie: Movie): void {
     this.movie = { ...movie };
@@ -44,10 +44,10 @@ export class MovieCrudComponent implements OnInit {
 
   updateMovie(): void {
     this.movieService.updateMovie(this.movie.id, this.movie).subscribe(() => {
-      this.getMovies();
-      this.resetForm();
+        this.getMovies();
+        this.resetForm();
     });
-  }
+}
 
   deleteMovie(id: number): void {
     this.movieService.deleteMovie(id).subscribe(() => {
@@ -56,7 +56,7 @@ export class MovieCrudComponent implements OnInit {
   }
 
   resetForm(): void {
-    this.movie = { id: 0, title: '', director: '', year: 0 };
+    this.movie = { id: 0, title: '', director: '', releaseYear: 0, version: 0 };
     this.isEdit = false;
   }
 }
