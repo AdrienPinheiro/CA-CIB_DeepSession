@@ -1,9 +1,6 @@
 # Pre-requisite
 
-IDE : 
-- VS Code
-- Intellij IDEA
-
+- VS Code or Intellij IDEA
 - JDK 17
 - Maven 3.9
 - Angular 18 : Node 18, 20, 22
