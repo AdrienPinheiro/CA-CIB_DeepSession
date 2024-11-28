@@ -11,7 +11,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api/task3")
+@RequestMapping("/api/solution/task3")
 public class Task3DocumentationControllerSolution {
 
   /**

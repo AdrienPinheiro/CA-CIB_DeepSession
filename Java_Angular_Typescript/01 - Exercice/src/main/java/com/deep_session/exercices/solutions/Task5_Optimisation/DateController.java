@@ -12,7 +12,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/solution/task1")
 public class DateController {
 
   /**
