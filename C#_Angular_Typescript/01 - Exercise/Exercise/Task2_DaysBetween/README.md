@@ -1,7 +1,7 @@
 # Task 2: Calculating Days Between Two Dates
 
 ### Objective
-This task introduces you to creating a REST endpoint with parameters and implementing basic business logic. You’ll also learn how to validate user input using **Spring Boot** and handle exceptions gracefully.
+This task introduces you to creating a REST endpoint with parameters and implementing basic business logic by using **GitHub Copilot Chat**. You’ll also learn how to validate user input using **.NET 8** and handle exceptions gracefully.
 
 ---
 
@@ -30,9 +30,9 @@ Create a REST endpoint that calculates the number of days between two given date
 
 ### File Structure
 ```plaintext
-src/main/java/com/deep_session/exercices/tasks
+Exercise/
     └── Task2_DaysBetween/
-          └── Task2DaysBetweenController.java
+          └── Task2DaysBetweenController.cs
 ```
 
 ---
@@ -40,27 +40,18 @@ src/main/java/com/deep_session/exercices/tasks
 ### Step-by-Step Instructions
 
 1. **Use GitHub Copilot to Generate Code**:
-   - Open `Task2DaysBetweenController.java` in your editor.
-   - Start by typing the following at the top of the file to define the package and import statements:
-     ```java
-     package com.deep_session.exercices.Task2_DaysBetween;
-
-     import org.springframework.web.bind.annotation.*;
-     import org.springframework.http.*;
-     import java.time.*;
-     import java.time.temporal.*;
-     ```
-   - Place your cursor below these lines and **ask GitHub Copilot** to generate the controller class:
+   - Open `Task2DaysBetweenController.cs` in your editor.
+   - Place your cursor inside the class and **ask GitHub Copilot** to generate the various methods :
      - Use **Ctrl+I (Windows/Linux)** or **Cmd+I (Mac)** to open the input field for Copilot.
      - Type the following prompt:
        ```
-       Create a REST API in Spring Boot with a GET endpoint /days-between. It accepts two query parameters, startDate and endDate, validates them, and returns the number of days between the dates.
+       Create a REST API in .NET 8 with a GET endpoint /days-between. It accepts two query parameters, startDate and endDate, validates them, and returns the number of days between the dates.
        ```
    - Accept Copilot’s suggestions to generate the necessary code.
 
 2. **Test the Generated Code**:
-   - Run the `DeepSessionExercicesApplication` class to start your Spring Boot application.
-   - Use a browser or tool like Postman to test the endpoint:  
+   - Run the `Task2DaysBetweenController` class to start your .NET8.
+   - Use a browser or tool like Postman/Bruno to test the endpoint:  
      ```
      http://localhost:8080/api/task2/days-between?startDate=2023-01-01&endDate=2023-01-10
      ```
@@ -70,42 +61,42 @@ src/main/java/com/deep_session/exercices/tasks
      ```
   
 3. **Generate the unit tests**:
-   - Open the chat window and use the `/test` command to generate unit tests for the endpoint. You will need to tag `@workspace` to give your assistant access to the project files.
+   - Open the chat window and use the `/tests` command to generate unit tests for the endpoint. You will need to tag `@workspace` to give your assistant access to the project files.
    - Review the generated tests and run them to validate the endpoint's functionality.
+    ```
+      cd 01 - Exercise/
+      dotnet test
+    ```
 
 ---
 
 ### What You’ll Learn
-- How to create a REST API endpoint that accepts and validates query parameters.
-- How to perform business logic using Java’s `LocalDate` and `ChronoUnit` classes.
-- How to handle invalid input gracefully using exception handling in **Spring Boot**.
+- How to create a REST API endpoint that accepts and validates query parameters in C#.
+- How to perform business logic using C#'s `DateTime` and `TimeSpan` classes.
+- How to handle invalid input gracefully using exception handling in **ASP.NET Core**.
 
 ---
 
 ### Additional Challenges
 1. Modify the endpoint to also return the number of weekdays between the two dates.
 2. Add unit tests for the endpoint to validate its functionality and error handling.
-3. Experiment with GitHub Copilot by prompting it to generate additional validation logic (e.g., checking if a date is in the future).
+3. Experiment with GitHub Copilot by prompting it to generate additional validation logic (e.g., checking if a date is in the future, different format (ex: Japanese format)).
 
 ---
 
 ### Troubleshooting
-- **Error**: `The declared package does not match the expected package`:  
-  Ensure the `Task2DaysBetweenController.java` file is placed in the folder:  
-  `src/main/java/com/deep_session/exercices/tasksTask2_DaysBetween/`.
-
 - **Date Parsing Errors**:  
   If you receive an error message about invalid date formats, ensure the query parameters are in `YYYY-MM-DD` format.
 
 - **Port Already in Use**:  
-  If the application fails to start, check if another application is using port `8080` or modify the port in `application.properties`.
+  If the application fails to start, check if another application is using port `8080` or modify the port in `properties\launchSettings.json`.
 
 ---
 
 ### Using GitHub Copilot Efficiently
 - **Prompt Suggestions**: Write clear, concise prompts to get accurate suggestions. For example:
-  - `"Create a GET endpoint in Spring Boot to calculate days between two dates with validation."`
-  - `"Add error handling for invalid date formats in a Spring Boot REST API."`
+  - `"Create a GET endpoint in .NET 8 to calculate days between two dates with validation. {Provide example of the intended behavior}"`
+  - `"Add error handling for invalid date formats in a .NET 8 REST API."`
 - **Experiment**: Try different prompts and see how Copilot adapts its suggestions.
 
 ---
