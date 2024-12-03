@@ -12,8 +12,8 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 @RestController
-@RequestMapping("/api/solution/task1")
-public class DateController {
+@RequestMapping("/api/solution/task5")
+public class DateControllerSolution {
 
   /**
    * Validates the input dates for null values and proper ISO format.
