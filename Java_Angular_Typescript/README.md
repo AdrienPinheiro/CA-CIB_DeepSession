@@ -55,7 +55,7 @@ In this part, you will apply the skills learned in the exercises to solve a more
    - Implement forms for adding, editing, and deleting movies with tests.
    - Ensure responsive design and user-friendly experience.
 
-3. **Integration and Testing**: 
+3. **Extra challenge**: 
    - Write and run tests to ensure the application works correctly.
    - Optionally, add advanced features like search, documentation, and CI/CD pipelines.
 
