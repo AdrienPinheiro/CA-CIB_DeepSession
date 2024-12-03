@@ -47,16 +47,15 @@ In this part, you will apply the skills learned in the exercises to solve a more
 #### Challenge Tasks:
 1. **Back-end Development**: 
    - Build a complete RESTful API for managing movies.
-   - Implement CRUD operations and error handling.
+   - Implement CRUD operations, tests and error handling.
    - Optimize the code and ensure security.
 
 2. **Front-end Development**: 
    - Create a user interface for interacting with the API.
-   - Implement forms for adding, editing, and deleting movies.
+   - Implement forms for adding, editing, and deleting movies with tests.
    - Ensure responsive design and user-friendly experience.
 
 3. **Integration and Testing**: 
-   - Integrate the front-end with the back-end.
    - Write and run tests to ensure the application works correctly.
    - Optionally, add advanced features like search, documentation, and CI/CD pipelines.
 
