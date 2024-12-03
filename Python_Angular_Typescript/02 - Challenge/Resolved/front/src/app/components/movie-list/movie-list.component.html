@@ -1,0 +1,7 @@
+<!-- src/app/components/movie-list/movie-list.component.html -->
+<div class="movie-list">
+  <div *ngFor="let movie of movies" class="movie-item">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.director }} - {{ movie.releaseYear }}</p>
+  </div>
+</div>

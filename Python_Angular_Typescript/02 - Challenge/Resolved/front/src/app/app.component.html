@@ -1,0 +1,11 @@
+<!-- src/app/app.component.html -->
+<nav>
+  <ul>
+    <li><a routerLink="/movies" routerLinkActive="active">Movie List</a></li>
+    <li><a routerLink="/crud" routerLinkActive="active">Manage Movies</a></li>
+  </ul>
+</nav>
+<main class="main">
+  <h1>{{ title }}</h1>
+  <router-outlet></router-outlet>
+</main>
