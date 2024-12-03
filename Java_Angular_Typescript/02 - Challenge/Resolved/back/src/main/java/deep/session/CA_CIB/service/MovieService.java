@@ -32,6 +32,20 @@ public class MovieService {
     }
 
     @Transactional
+    public Movie updateMovie(Long id, Movie movie) {
+        Movie existingMovie = movieRepository.findById(id).orElseThrow(() -> new MovieNotFoundException("Movie not found with id: " + id));
+        if (!existingMovie.getTitle().equals(movie.getTitle()) || !existingMovie.getDirector().equals(movie.getDirector())) {
+            if (movieRepository.existsByTitleAndDirector(movie.getTitle(), movie.getDirector())) {
+                throw new MovieAlreadyExistsException("Movie already exists with title: " + movie.getTitle() + " and director: " + movie.getDirector());
+            }
+        }
+        existingMovie.setTitle(movie.getTitle());
+        existingMovie.setDirector(movie.getDirector());
+        existingMovie.setReleaseYear(movie.getReleaseYear());
+        return movieRepository.save(existingMovie);
+    }
+
+    @Transactional
     public void deleteMovie(Long id) {
         if (!movieRepository.existsById(id)) {
             throw new MovieNotFoundException("Movie not found with id: " + id);

@@ -14,7 +14,7 @@ This challenge is designed to help you understand and resolve issues in both the
 4. [Tasks](#tasks)
    - [Back-end Tasks](#back-end-tasks)
    - [Front-end Tasks](#front-end-tasks)
-   - [Optional Enhancements](#optional-enhancements)
+   - [Extra challenge](#extra-challenge)
 5. [Setup Instructions](#setup-instructions)
    - [Back-end Setup](#back-end-setup)
    - [Front-end Setup](#front-end-setup)
@@ -40,6 +40,47 @@ The project is divided into two main parts:
 
 - **Back-end**: A Spring Boot application for managing movies via a REST API.
 - **Front-end**: An Angular application providing a user-friendly interface for interacting with the API.
+
+---
+
+## Setup Instructions
+
+### Back-end Setup
+
+1. Navigate to the `back` folder:
+
+cd back
+
+2. Build and run the back-end:
+
+./mvnw clean install
+./mvnw spring-boot:run
+
+### Front-end Setup
+
+1. Navigate to the front folder:
+
+cd front
+
+2. Install dependencies:
+
+npm install
+
+3. Start the development server:
+
+ng serve (or 'npm start' if don't have Angular CLI)
+
+### Testing
+
+Back-end Testing
+1. Run back-end tests:
+
+./mvnw test
+
+Front-end Testing
+Run front-end tests:
+
+ng test (or 'npm test' if don't have Angular CLI)
 
 ---
 
@@ -123,9 +164,14 @@ front/
 
 ---
 
-## Optional Enhancements
+## Extra challenge
 
-1. **Create a Dockerfile**:
+1. **Advancing Application Testing**:
+   - Implement comprehensive unit tests for all service and controller layers.
+   - Ensure integration tests cover all critical paths and edge cases.
+   - Leverage GitHub Actions for continuous integration to automatically run tests on each pull request.
+
+2. **Create a Dockerfile**:
    - Package the back-end and front-end applications into Docker containers.
    - Example for Spring Boot:
         ```Dockerfile
@@ -135,7 +181,7 @@ front/
         EXPOSE 8080
         ```
 
-2. **Set Up CI/CD**:
+3. **Set Up CI/CD**:
    - Create a GitLab CI/CD pipeline for automating builds, tests, and deployments.
    - Example `.gitlab-ci.yml`:
         ```yaml
@@ -158,7 +204,7 @@ front/
             - docker run -d -p 8080:8080 movie-api
         ```
 
-3. **Generate Visual Documentation**:
+4. **Generate Visual Documentation**:
    - Use Mermaid diagrams to represent workflows or architecture:
         ```mermaid
         graph TD
@@ -167,49 +213,10 @@ front/
         C -->|Stores| D[In-memory DB]
         ```
 
-4. **Automation**:
+5. **Automation**:
    - Create a PowerShell script for setting up and running the project end-to-end.
 
 ---
-
-## Setup Instructions
-
-### Back-end Setup
-
-1. Navigate to the `back` folder:
-
-cd back
-
-2. Build and run the back-end:
-
-./mvnw clean install
-./mvnw spring-boot:run
-
-### Front-end Setup
-
-1. Navigate to the front folder:
-
-cd front
-
-2. Install dependencies:
-
-npm install
-
-3. Start the development server:
-
-ng serve
-
-### Testing
-
-Back-end Testing
-1. Run back-end tests:
-
-./mvnw test
-
-Front-end Testing
-Run front-end tests:
-
-ng test
 
 
 # Conclusion

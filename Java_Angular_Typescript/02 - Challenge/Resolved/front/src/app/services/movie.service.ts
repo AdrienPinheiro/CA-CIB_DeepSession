@@ -22,11 +22,12 @@ export class MovieService {
   }
 
   createMovie(movie: Movie): Observable<Movie> {
-    return this.http.post<Movie>(this.apiUrl, movie);
+    const movieData = { ...movie, version: undefined }; 
+    return this.http.post<Movie>(this.apiUrl, movieData);
   }
 
   updateMovie(id: number, movie: Movie): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}`, movie);
+    return this.http.patch<void>(`${this.apiUrl}/${id}`, movie);
   }
 
   deleteMovie(id: number): Observable<void> {

@@ -39,10 +39,9 @@ public class MovieController {
     }
 
     // Mettre à jour un film existant
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<String> updateMovie(@PathVariable Long id, @Valid @RequestBody Movie movie) {
-        movie.setId(id);
-        movieService.saveMovie(movie);
+        movieService.updateMovie(id, movie);
         return new ResponseEntity<>("Movie updated successfully", HttpStatus.OK);
     }
 

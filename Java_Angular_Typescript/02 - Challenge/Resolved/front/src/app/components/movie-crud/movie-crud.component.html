@@ -13,7 +13,7 @@
         <h2>{{ movie.title }}</h2>
         <p>{{ movie.director }} - {{ movie.releaseYear }}</p>
         <button (click)="editMovie(movie)">Edit</button>
-        <button (click)="deleteMovie(movie.id)">Delete</button>
+        <button (click)="deleteMovie(movie.id ?? 0)">Delete</button>
       </div>
     </div>
   </div>
