@@ -7,7 +7,7 @@ Welcome to the Deep Dive Session focused on Java, Angular, and TypeScript. This 
 - VS Code or IntelliJ IDEA
 - JDK 17
 - Maven 3.9
-- Angular 18: Node 18, 20, 22
+- Angular 17: Node 18, 20, 22
 - GitHub Copilot Extension configured and working in your IDE
 - Postman/Bruno
 
