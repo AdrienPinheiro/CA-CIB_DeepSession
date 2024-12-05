@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using Tasks.Task2;
+using TasksSolution.Task2;
 
 namespace TaskTest;
 
@@ -27,7 +27,7 @@ public class IntegrationTestSolution
     {
         var result = _controller.DaysBetween("2023-01-01", "invalid-date") as BadRequestObjectResult;
         Assert.NotNull(result);
-        Assert.Equal("Invalid date format. Use YYYY-MM-DD.", result.Value);
+        Assert.Equal("System.FormatException : Invalid date format. Use YYYY-MM-DD.", result.Value);
     }
 
     [Fact]
