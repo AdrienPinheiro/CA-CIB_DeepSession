@@ -459,6 +459,7 @@
       "outputPath": "C:\\Users\\kiance\\Documents\\Projet\\CA-CIB\\CA-CIB_DeepSession\\C#_Angular_Typescript\\01 - Exercise\\Exercise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "C:\\Users\\kiance\\Documents\\Projet\\CA-CIB\\CA-CIB_DeepSession\\C#_Angular_Typescript\\NuGet.Config",
         "C:\\Users\\kiance\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [

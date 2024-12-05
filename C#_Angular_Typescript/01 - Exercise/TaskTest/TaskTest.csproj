@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Exercise\Tasks.csproj" />
+    <ProjectReference Include="..\Solution\Solution.csproj" />
   </ItemGroup>
 
   <ItemGroup>

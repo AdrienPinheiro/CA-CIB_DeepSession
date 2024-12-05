@@ -16,15 +16,16 @@ In this task, you will improve an existing Spring Boot controller by:
 4. **Leveraging Copilot's Context-Aware Commands**: Use the `/explain` and `/fix` commands to understand and enhance your code.
    - **/explain**: Understand code snippets and get suggestions for improvements.
    - **/fix**: Automatically detect and fix issues or bugs in your code.
+5. **Code Review (VS code only)** : Try to select your code and click on `Copilot` on the menu and click on `Review`
 
 ---
 
 ### **File Structure**
 
 ```plaintext
-src/main/java/com/deep_session/exercices/tasks
+01 - Exercise/Exercise
     └── Task5_Optimisation/
-          └── DateController.java
+          └── DateController.cs
 ```
 
 ---
@@ -36,7 +37,7 @@ src/main/java/com/deep_session/exercices/tasks
    - Review Copilot’s explanation of the code, and use this to decide how to improve it.
 
 #### **Part 2: Detect and Refactor Repetitive Code**
-1. Open the `DateController.java` file.
+1. Open the `DateController.cs` file.
 2. Identify repetitive logic, such as date validation and parsing.
 3. Use **GitHub Copilot** to refactor these parts:
    - Highlight repetitive code sections and type a comment like `// Refactor this logic`.
@@ -53,7 +54,7 @@ src/main/java/com/deep_session/exercices/tasks
    - Copilot will automatically identify and suggest a fix for this issue.
 
    Example output from Copilot might suggest changing the line to:
-   ```java
+   ```C#
    if (start.isAfter(end)) {
        return ResponseEntity.badRequest().body("startDate cannot be after endDate.");
    }

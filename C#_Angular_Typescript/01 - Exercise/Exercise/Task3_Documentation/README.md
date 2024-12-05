@@ -22,8 +22,6 @@ Exercise/
           └── Task3DocumentationController.cs
 ```
 
----
-
 ### Step-by-Step Instructions
 
 #### **Part 1: Add XML Comments**
@@ -91,6 +89,13 @@ Exercise/
 
 ---
 
+### Additional Challenges
+1. Add custom error messages to the Swagger documentation for validation errors.
+2. Explore how to secure the Swagger UI using ASP.NET Core Identity.
+3. Experiment with generating API client code using the OpenAPI specification.
+
+---
+
 ### **Discussion Points**
 
 1. **Why Document APIs?**
@@ -101,10 +106,3 @@ Exercise/
 2. **Swagger and Team Collaboration**:
    - Swagger UI provides an interactive interface for testing APIs.
    - Helps non-developers (e.g., QA teams, product managers) understand API capabilities.
-
----
-
-### Additional Challenges
-1. Add custom error messages to the Swagger documentation for validation errors.
-2. Explore how to secure the Swagger UI using ASP.NET Core Identity.
-3. Experiment with generating API client code using the OpenAPI specification.

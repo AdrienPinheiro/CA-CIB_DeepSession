@@ -1,21 +1,21 @@
 # Task 4: Centralized Error Management
 
 ### **Objective**
-Learn how to set up a **global error handling mechanism** in Spring Boot using `@ControllerAdvice`, while leveraging **GitHub Copilot's chat window and context selection** to generate and refine exception-handling methods. This approach ensures students explore Copilot's advanced features and understand centralized error handling in Spring Boot.
+Learn how to set up a **global error handling mechanism** in ASP.NET Core using `ExceptionFilterAttribute`, while leveraging **GitHub Copilot's chat window and context selection** to generate and refine exception-handling methods. This approach ensures students explore Copilot's advanced features and understand centralized error handling in ASP.NET Core.
 
 ---
 
 ### **Task Description**
 1. **Create a Global Exception Handler**:
-   - Use `@ControllerAdvice` to define a centralized class for handling exceptions across the application.
-   - Implement exception-specific handling using `@ExceptionHandler`.
+   - Use `ExceptionFilterAttribute` to define a centralized class for handling exceptions across the application.
+   - Implement exception-specific handling using `OnException` method.
 
 2. **Explore Copilot’s Context Selection**:
    - Use the **context selection feature** in Copilot’s chat window to refine exception handling logic by reviewing multiple controller classes in your project.
 
 3. **Handle Specific Exceptions**:
-   - Add handlers for `DateTimeParseException` and `IllegalArgumentException` to return user-friendly error messages.
-   - Handle `NullPointerException` and general exceptions for robust fallback behavior.
+   - Add handlers for `FormatException` and `ArgumentException` to return user-friendly error messages.
+   - Handle `NullReferenceException` and general exceptions for robust fallback behavior.
 
 4. **Enhance Swagger Documentation** (Optional):
    - Demonstrate how the exception responses integrate with Swagger, if available.
@@ -24,9 +24,9 @@ Learn how to set up a **global error handling mechanism** in Spring Boot using `
 
 ### **File Structure**
 ```plaintext
-src/main/java/com/deep_session/exercices/tasks
+01-Exercise/Exercise
     └── Task4_ErrorHandling/
-          └── GlobalExceptionHandler.java
+          └── Task4ErrorHandling.cs
 ```
 
 ---
@@ -35,51 +35,48 @@ src/main/java/com/deep_session/exercices/tasks
 
 #### **Define the Exception Handler Class**
 
-1. Open the `GlobalExceptionHandler.java` file.
-2. Start by defining a basic structure:
-   ```java
-   @ControllerAdvice
-   public class GlobalExceptionHandler {
-   }
-   ```
-3. Use **GitHub Copilot's context selection feature**:
+1. Open the `GlobalExceptionHandler.cs` file.
+2. Use **GitHub Copilot's context selection feature**:
    - Open Copilot's chat window and load related controller classes in your project.
    - Use context selection to let Copilot understand the broader codebase for better suggestions.
-
-4. Generate exception-handling methods using Copilot:
+3. Generate exception-handling methods using Copilot:
    - Inside the class, use a prompt inspired by the following ones in the chat window:
-     ```java
+     ```c#
      Write an exception handler for DateTimeParseException with a custom error message.
      ```
-     ```java
+     ```c#
      Add a handler for NullPointerException to return a generic error response.
      ```
-
 ---
 
 #### **Implement Handlers for Common Exceptions**
 
 Use Copilot's suggestions to implement methods like:
 
-```java
-@ExceptionHandler(DateTimeParseException.class)
-public ResponseEntity<String> handleDateTimeParseException(DateTimeParseException e) {
-    return ResponseEntity.badRequest().body("Invalid date format: " + e.getParsedString());
+```c#
+private ObjectResult HandleFormatException(string message)
+{
+   return new BadRequestObjectResult("Message : " + message);
 }
 
-@ExceptionHandler(IllegalArgumentException.class)
-public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
-    return ResponseEntity.badRequest().body("Illegal argument: " + e.getMessage());
+private ObjectResult HandleNullReferenceException(string message)
+{
+   return new ObjectResult("A null value was encountered: " + message) { StatusCode = 500 };
 }
 
-@ExceptionHandler(NullPointerException.class)
-public ResponseEntity<String> handleNullPointerException(NullPointerException e) {
-    return ResponseEntity.internalServerError().body("A required value was null. Please check your request.");
+private ObjectResult HandleArgumentException(string message)
+{
+   return new BadRequestObjectResult("Invalid argument: " + message);
 }
 
-@ExceptionHandler(Exception.class)
-public ResponseEntity<String> handleGeneralException(Exception e) {
-    return ResponseEntity.internalServerError().body("An unexpected error occurred: " + e.getMessage());
+private ObjectResult HandleDateTimeParseException(string message)
+{
+   return new BadRequestObjectResult("DateTime parsing error: " + message);
+}
+
+private ObjectResult HandleGenericException(string message)
+{
+   return new ObjectResult("An error occurred: " + message) { StatusCode = 500 };
 }
 ```
 
@@ -87,12 +84,13 @@ public ResponseEntity<String> handleGeneralException(Exception e) {
 
 #### **Test Exception Handling**
 
-1. Run the application and use a REST client (e.g., Postman) to test various endpoints:
-   - Test invalid date formats to trigger `DateTimeParseException`.
+1. Implement the new error handler inside the class `Task4DaysBetweenController.cs`
+2. Run the application and use a REST client (e.g., Postman) to test various endpoints:
+   - Test invalid date formats to trigger `FormatException`.
    - Add scenarios in your code to provoke `NullPointerException` and `IllegalArgumentException`.
    - Verify generic exception handling by introducing an unexpected error.
 
-2. Use Copilot to refine and test changes:
+3. Use Copilot to refine and test changes:
    - Ask Copilot's chat window for ways to test the error-handling methods.
    - Refine responses with more detailed error messages or logging, guided by Copilot's suggestions.
 
