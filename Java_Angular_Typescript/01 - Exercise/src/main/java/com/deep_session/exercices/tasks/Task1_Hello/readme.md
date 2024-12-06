@@ -34,7 +34,7 @@ src/main/java/com/deep_session/exercices/tasks/
 
      import org.springframework.web.bind.annotation.*;
      ```
-   - Now, place your cursor below these lines and **prompt GitHub Copilot** to generate the controller class:
+   - Now, place your cursor below these lines and **ask GitHub Copilot** to generate the controller class:
      - Use **Ctrl+I (Windows/Linux)** or **Cmd+I (Mac)** to open the input field for Copilot.
      - Type the following prompt:
        ```
