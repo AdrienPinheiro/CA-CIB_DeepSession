@@ -16,6 +16,7 @@ This challenge is designed to help you understand and resolve issues in both the
    - [Front-end Tasks](#front-end-tasks)
    - [Extra challenge](#extra-challenge)
 5. [Setup Instructions](#setup-instructions)
+   - [Proxy Setup](#proxy-setup)
    - [Back-end Setup](#back-end-setup)
    - [Front-end Setup](#front-end-setup)
 6. [Testing](#testing)
@@ -38,23 +39,99 @@ The objective of this challenge is to:
 
 The project is divided into two main parts:
 
-- **Back-end**: A Spring Boot application for managing movies via a REST API.
+- **Back-end**: A FastAPI application for managing movies via a REST API.
 - **Front-end**: An Angular application providing a user-friendly interface for interacting with the API.
 
 ---
 
 ## Setup Instructions
 
+### Configure CA-CIB proxy:
+
+  In VsCode :
+
+  Configure the proxy settings in your settings.json file, you can add the http.proxy and http.proxyAuthorization settings. 
+
+  Replace http.proxyAuthorization: null with your actual proxy authorization details.
+  Add the http.proxy setting with your proxy server details.
+  Here is the updated settings.json:
+
+  {
+      "workbench.colorTheme": "One Dark Pro Darker",
+      "liveServer.settings.donotShowInfoMsg": true,
+      "http.proxy": "http://username:password@proxyserver:port",
+      "http.proxyAuthorization": "Basic base64encodedusername:password"
+  }
+
+  In IntelliJ IDEA :
+
+  To configure proxy settings in IntelliJ IDEA, you can follow these steps to set up the proxy in the idea.properties file, which is the configuration file that IntelliJ IDEA uses for its network settings:
+
+  Here is the short version of how to set up the proxy:
+
+  Locate the idea.properties file:
+
+  On Windows: C:\Users\<YourUsername>\AppData\Roaming\JetBrains\IntelliJIdea<version>\idea.properties
+  On macOS/Linux: ~/.IntelliJIdea<version>/config/idea.properties
+  Edit idea.properties: Open the file and add the following proxy settings.
+
+  # Proxy settings
+  idea.proxy.host=proxyserver
+  idea.proxy.port=port
+  idea.proxy.user=username
+  idea.proxy.password=password
+  idea.proxy.type=HTTP   # or SOCKS5 if you're using SOCKS proxy
+  idea.proxy.authentication=basic
+  Replace the placeholders:
+
+  proxyserver with your proxy server URL (e.g., proxy.par.emea.cib).
+  port with your proxy server port number (e.g., 8080).
+  username and password with your proxy credentials.
+  Base64 Encoding for Proxy Password (Optional): IntelliJ IDEA does not require base64 encoding for the proxy password in idea.properties. However, if needed, IntelliJ IDEA supports basic authentication where you simply enter the plain username and password.
+
+  Restart IntelliJ IDEA: After saving the changes, restart IntelliJ IDEA to apply the new proxy settings.
+
 ### Back-end Setup
 
-1. Navigate to the `back` folder:
+1. Ensure **Python 3.10 or higher** is installed on your system:
+  ```bash
+  python --version
+  ```
+  If not installed, download it from the [official Python website](https://www.python.org/downloads/).
 
-cd back
+- Install **pip**, Python's package manager (usually included with Python).
 
-2. Build and run the back-end:
+2. Use a Virtual Environment:
+  It’s highly recommended to create a virtual environment for each task to avoid dependency conflicts.
 
-./mvnw clean install
-./mvnw spring-boot:run
+  In VsCode : 
+
+  Press Ctrl + Shift + P to open the Command Palette.
+  Type Python: Select Interpreter and select the correct Python interpreter from the list.
+
+  Open Command Palette:
+  Use the Python: Create Environment command to create a virtual environment.
+  Show in Command Palette
+  Select Environment Type:
+
+  Choose the environment type venv from the list presented.
+  Select the Python interpreter you want to use as the base for the new virtual environment.
+
+  In InteeliJ IDEA :
+
+  Install the Python plugin (if not already installed) via File → Settings → Plugins.
+  Go to File → Settings → Project: [Your Project] → Python Interpreter.
+  Select your Python interpreter (System or Virtual Environment).
+
+  Go to Settings → Python Interpreter → Add Interpreter → Virtual Environment.
+  Choose the location for the new environment and select the Python version.
+
+  Activate the Environment :
+  ```bash
+  python -m venv venv
+  source venv/bin/activate    # On Linux/Mac
+  venv\Scripts\activate       # On Windows
+  ```
 
 ### Front-end Setup
 
@@ -88,20 +165,26 @@ ng test (or 'npm test' if don't have Angular CLI)
 
 ### Back-end
 
-The back-end is a Spring Boot application with the following structure:
+The back-end is a FastAPI application with the following structure:
 
-back/ 
-├── src/ 
-│ ├── main/ 
-│ │ ├── java/ 
-│ │ │ └── com.example.movies/ # Business logic and controllers 
-│ │ ├── resources/ 
-│ │ │ └── application.properties # Configuration files 
-│ │ └── static/ # Optional static files 
-│ └── test/ 
-│ └── java/ # Unit and integration tests 
-├── pom.xml # Maven configuration file 
-└── mvnw, mvnw.cmd # Maven wrapper scripts
+back/
+├── app/
+│   ├── __init__.py
+│   ├── main.py # Entry point for the application
+│   ├── models.py # Database models
+│   ├── schemas.py # Pydantic models (schemas)
+│   ├── crud.py # CRUD operations
+│   ├── database.py # Database connection and setup
+│   └── routers/ # API endpoints
+│       ├── __init__.py
+│       └── movies.py # Movie-related endpoints
+├── tests/
+│   ├── __init__.py
+│   ├── test_main.py # Tests for main application
+│   └── test_movie.py # Tests for movie endpoints
+├── venv/ # Virtual environment directory
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
 
 ### Front-end
@@ -130,20 +213,18 @@ front/
 ### Back-end Tasks
 
 1. **Build the REST API**:
-   - Use an in-memory database (e.g., H2) for quick development.
-   - Implement CRUD endpoints for managing movies.
+   - Use an in-memory database (e.g., SQLite) for quick development.
+   - Implement CRUD endpoints for managing movies using FastAPI.
    - Add error handling, optimize the code, and ensure the application is secure.
 
 2. **Run and Test the Application**:
-   - Build the back-end project using Maven:
-   - Start the Spring Boot application:
-   - Ensure all tests in `back/src/test/java` pass:
-     - Examples: `CaCibApplicationTests`, `MovieTest`.
+   - Launch the FastAPI application to serve the REST API endpoints. 
+   This will allow you to interact with the API for creating, reading, updating, and deleting movie records.
 
 3. **Optional Enhancements**:
    - Add additional endpoints (e.g., advanced search, batch updates).
-   - Use `@ControllerAdvice` for centralized error handling.
-   - Generate API documentation using Swagger.
+   - Use FastAPI's exception handlers for centralized error handling.
+   - Generate API documentation using FastAPI's built-in Swagger UI.
 
 ### Front-end Tasks
 
@@ -173,13 +254,28 @@ front/
 
 2. **Create a Dockerfile**:
    - Package the back-end and front-end applications into Docker containers.
-   - Example for Spring Boot:
-        ```Dockerfile
-        FROM openjdk:17-jdk-slim
-        COPY target/movie-api.jar movie-api.jar
-        ENTRYPOINT ["java", "-jar", "movie-api.jar"]
-        EXPOSE 8080
-        ```
+   - Example for FastAPI:
+         ```Dockerfile
+         FROM python:3.10-slim
+
+         # Set the working directory
+         WORKDIR /app
+
+         # Copy the requirements file
+         COPY requirements.txt .
+
+         # Install dependencies
+         RUN pip install --no-cache-dir -r requirements.txt
+
+         # Copy the application code
+         COPY . .
+
+         # Expose the port FastAPI will run on
+         EXPOSE 8000
+
+         # Command to run the FastAPI application
+         CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+         ```
 
 3. **Set Up CI/CD**:
    - Create a GitLab CI/CD pipeline for automating builds, tests, and deployments.
