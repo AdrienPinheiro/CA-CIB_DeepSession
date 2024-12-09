@@ -40,7 +40,7 @@ The objective of this challenge is to:
 
 The project is divided into two main parts:
 
-- **Back-end**: A Spring Boot application for managing movies via a REST API.
+- **Back-end**: An MVC application for managing movies via a REST API.
 - **Front-end**: An Angular application providing a user-friendly interface for interacting with the API.
 
 ---
@@ -48,15 +48,38 @@ The project is divided into two main parts:
 ## Setup Instructions
 
 ### Back-end Setup
+1. Just go in the `02-Challenge/back` folder  
 
-1. Navigate to the `back` folder:
+2. Install dependencies you need :
+```sh
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet tool install -global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Moq
+dotnet add package xunit
+```
 
-cd back
+2. Clean and build the project with :
+```sh
+dotnet clean
+dotnet build
+```
 
-2. Build and run the back-end:
+2. Initialize the database :
+```sh
+dotnet ef migrations add InitialCreate
+```
 
-./mvnw clean install
-./mvnw spring-boot:run
+3. Then you can modify the file movies.db with your movies then update the database :
+```sh
+dotnet ef database update
+```
+
+4. Just go in the `back` folder and use:
+```sh
+dotnet run
+```
 
 ### Front-end Setup
 
@@ -75,42 +98,45 @@ ng serve (or 'npm start' if don't have Angular CLI)
 ### Testing
 
 Back-end Testing
-1. Run back-end tests:
+1. Navigate to MovieApi.Tests :
+```
+cd 02-Challenge/MovieApi.Tests
+```
 
-./mvnw test
+2. Run back-end tests:
 
-Front-end Testing
-Run front-end tests:
+```
+dotnet tests
+```
 
+3. Run Front-end tests :
+
+```
 ng test (or 'npm test' if don't have Angular CLI)
-
+```
 ---
 
 ## Structure
 
 ### Back-end
 
-The back-end is a Spring Boot application with the following structure:
-
+The back-end is a MVC application with the following structure:
 ```markdown
 back/ 
-├── src/ 
-│ ├── main/ 
-│ │ ├── java/ 
-│ │ │ └── com.example.movies/ # Business logic and controllers 
-│ │ ├── resources/ 
-│ │ │ └── application.properties # Configuration files 
-│ │ └── static/ # Optional static files 
+├── MovieApi/ 
+│ ├── Controllers/ # Controllers
+│ ├── Data/
+│ ├── Migrations/
+│ ├── Models/ # Business logic
+│ ├── Properties/ # Configuration files
+│ ├── Program.cs # Configuration & startup file
 │ └── test/ 
-│ └── java/ # Unit and integration tests 
-├── pom.xml # Maven configuration file 
-└── mvnw, mvnw.cmd # Maven wrapper scripts
 ```
+
 
 ### Front-end
 
 The front-end is an Angular application with the following structure:
-
 ```markdown
 front/ 
 ├── .vscode/ # VSCode settings 
@@ -134,14 +160,14 @@ front/
 ### Back-end Tasks
 
 1. **Build the REST API**:
-   - Use an in-memory database (e.g., H2) for quick development.
+   - Use an in-memory database (e.g., EF) for quick development.
    - Implement CRUD endpoints for managing movies.
    - Add error handling, optimize the code, and ensure the application is secure.
 
 2. **Run and Test the Application**:
-   - Build the back-end project using Maven:
-   - Start the Spring Boot application:
-   - Ensure all tests in `back/src/test/java` pass:
+   - Build the back-end project using MVC:
+   - Start the application:
+   - Ensure all tests in `back/test` pass:
      - Examples: `CaCibApplicationTests`, `MovieTest`.
 
 3. **Optional Enhancements**:
@@ -177,12 +203,13 @@ front/
 
 2. **Create a Dockerfile**:
    - Package the back-end and front-end applications into Docker containers.
-   - Example for Spring Boot:
+   - Example for .NET:
         ```Dockerfile
-        FROM openjdk:17-jdk-slim
-        COPY target/movie-api.jar movie-api.jar
-        ENTRYPOINT ["java", "-jar", "movie-api.jar"]
-        EXPOSE 8080
+        FROM mcr.microsoft.com/dotnet/aspnet:8.0
+        COPY bin/Release/net8.0/publish/ App/
+        WORKDIR /App
+        ENTRYPOINT ["dotnet", "MovieApi.dll"]
+        EXPOSE 80
         ```
 
 3. **Set Up CI/CD**:
@@ -196,16 +223,15 @@ front/
 
         build:
         script:
-            - mvn clean install
-            - docker build -t movie-api .
+            - dotnet build
 
         test:
         script:
-            - mvn test
+            - dotnet test
 
         deploy:
         script:
-            - docker run -d -p 8080:8080 movie-api
+            - docker run -d -p 80:80 movie-api
         ```
 
 4. **Generate Visual Documentation**:
@@ -221,7 +247,6 @@ front/
    - Create a PowerShell script for setting up and running the project end-to-end.
 
 ---
-
 
 # Conclusion
 By completing these tasks using GitHub Copilot, you will ensure that both the back-end and front-end parts of the project are functional, secure, and optimized. Use the Resolved folder as a reference to guide your progress.
