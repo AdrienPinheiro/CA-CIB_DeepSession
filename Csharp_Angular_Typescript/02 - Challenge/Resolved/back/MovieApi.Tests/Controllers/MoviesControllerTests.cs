@@ -118,6 +118,10 @@ namespace MovieApi.Tests.Controllers
             Assert.Null(deletedMovie);
         }
 
+        /// <summary>
+        /// Dispose the context after each test
+        /// (Ensure the in-memory database is deleted)
+        /// </summary>
         public void Dispose()
         {
             _context.Database.EnsureDeleted();

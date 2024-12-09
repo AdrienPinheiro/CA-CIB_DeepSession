@@ -95,9 +95,12 @@ ng serve (or 'npm start' if don't have Angular CLI)
 ### Testing
 
 Back-end Testing
+1. Navigate to MovieApi.Tests :
+cd MovieApi.Tests
+
 1. Run back-end tests:
 
-./mvnw test
+dotnet tests
 
 Front-end Testing
 Run front-end tests:
@@ -192,12 +195,13 @@ front/
 
 2. **Create a Dockerfile**:
    - Package the back-end and front-end applications into Docker containers.
-   - Example for Spring Boot:
+   - Example for .NET:
         ```Dockerfile
-        FROM openjdk:17-jdk-slim
-        COPY target/movie-api.jar movie-api.jar
-        ENTRYPOINT ["java", "-jar", "movie-api.jar"]
-        EXPOSE 8080
+        FROM mcr.microsoft.com/dotnet/aspnet:8.0
+        COPY bin/Release/net8.0/publish/ App/
+        WORKDIR /App
+        ENTRYPOINT ["dotnet", "MovieApi.dll"]
+        EXPOSE 80
         ```
 
 3. **Set Up CI/CD**:
@@ -211,16 +215,15 @@ front/
 
         build:
         script:
-            - mvn clean install
-            - docker build -t movie-api .
+            - dotnet build
 
         test:
         script:
-            - mvn test
+            - dotnet test
 
         deploy:
         script:
-            - docker run -d -p 8080:8080 movie-api
+            - docker run -d -p 80:80 movie-api
         ```
 
 4. **Generate Visual Documentation**:
@@ -236,7 +239,6 @@ front/
    - Create a PowerShell script for setting up and running the project end-to-end.
 
 ---
-
 
 # Conclusion
 By completing these tasks using GitHub Copilot, you will ensure that both the back-end and front-end parts of the project are functional, secure, and optimized. Use the Resolved folder as a reference to guide your progress.

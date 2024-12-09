@@ -25,7 +25,7 @@ In this part, you will work on a series of guided exercises to familiarize yours
 
 #### Key Learning Objectives:
 - Understand how to use GitHub Copilot for code suggestions.
-- Learn to create REST APIs using Spring Boot.
+- Learn to create REST APIs using .NET.
 - Explore Angular components and services.
 - Practice TypeScript basics and advanced features.
 
@@ -41,7 +41,7 @@ In this part, you will work on a series of guided exercises to familiarize yours
 In this part, you will apply the skills learned in the exercises to solve a more complex challenge. The challenge involves building a complete application with both back-end and front-end components.
 
 #### Key Learning Objectives:
-- Build a RESTful API using Spring Boot.
+- Build a RESTful API using .NET.
 - Create a user interface with Angular.
 - Integrate the front-end and back-end.
 - Implement advanced features like error handling, documentation, and CI/CD pipelines.
@@ -63,6 +63,6 @@ In this part, you will apply the skills learned in the exercises to solve a more
 
 ## Conclusion
 
-By the end of this session, you will have a solid understanding of how to use GitHub Copilot to enhance your development workflow in Java, Angular, and TypeScript. You will also have hands-on experience building and optimizing a full-stack application.
+By the end of this session, you will have a solid understanding of how to use GitHub Copilot to enhance your development workflow in .NET, Angular, and TypeScript. You will also have hands-on experience building and optimizing a full-stack application.
 
 Happy coding! 🚀

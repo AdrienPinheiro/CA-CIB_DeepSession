@@ -74,8 +74,8 @@ namespace MovieApi.Controllers
         /// <param name="id">The movie ID.</param>
         /// <param name="movie">The updated movie.</param>
         /// <returns>No content.</returns>
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovie(int id, Movie movie)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchMovie(int id, Movie movie)
         {
             if (id != movie.Id)
             {

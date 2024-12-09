@@ -7,8 +7,8 @@ describe('MovieService', () => {
   let service: MovieService;
   let httpMock: HttpTestingController;
   const mockMovies: Movie[] = [
-    { id: 1, title: 'Movie 1', director: 'Director 1', releaseYear: 2021, version: 0 },
-    { id: 2, title: 'Movie 2', director: 'Director 2', releaseYear: 2022, version: 1 }
+    { id: 1, title: 'Movie 1', director: 'Director 1', releaseDate: new Date(2022, 11, 31, 23, 59, 59, 999), version: 0 },
+    { id: 2, title: 'Movie 2', director: 'Director 2', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999), version: 1 }
   ];
 
   beforeEach(() => {
@@ -50,7 +50,7 @@ describe('MovieService', () => {
   });
 
   it('should create a movie', () => {
-    const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseYear: 2023, version: 2 };
+    const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseDate: new Date(2023, 11, 31, 23, 59, 59, 999) , version: 2 };
     service.createMovie(newMovie).subscribe((movie) => {
       expect(movie).toEqual(newMovie);
     });
@@ -61,7 +61,7 @@ describe('MovieService', () => {
   });
 
   it('should update a movie', () => {
-    const updatedMovie: Movie = { id: 1, title: 'Updated Movie 1', director: 'Updated Director 1', releaseYear: 2021, version: 1 };
+    const updatedMovie: Movie = { id: 1, title: 'Updated Movie 1', director: 'Updated Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999), version: 1 };
     service.updateMovie(1, updatedMovie).subscribe(() => {
       expect().nothing();
     });

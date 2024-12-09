@@ -9,7 +9,7 @@ import { Movie } from '../models/movie.model';
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = 'http://localhost:8081/movies'; // Ensure this matches your back-end server URL
+  private apiUrl = 'http://localhost:5281/api/movies'; // Ensure this matches your back-end server URL
 
   constructor(private http: HttpClient) {}
 

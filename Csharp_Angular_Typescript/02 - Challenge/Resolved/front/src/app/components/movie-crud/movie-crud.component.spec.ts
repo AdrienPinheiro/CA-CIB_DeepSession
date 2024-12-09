@@ -11,8 +11,8 @@ describe('MovieCrudComponent', () => {
   let fixture: ComponentFixture<MovieCrudComponent>;
   let movieService: MovieService;
   const mockMovies: Movie[] = [
-    { id: 1, title: 'Movie 1', director: 'Director 1', releaseYear: 2021 },
-    { id: 2, title: 'Movie 2', director: 'Director 2', releaseYear: 2022 }
+    { id: 1, title: 'Movie 1', director: 'Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999) },
+    { id: 2, title: 'Movie 2', director: 'Director 2', releaseDate: new Date(2022, 11, 31, 23, 59, 59, 999) }
   ];
 
   beforeEach(async () => {
@@ -50,7 +50,7 @@ describe('MovieCrudComponent', () => {
   });
 
   it('should add a movie', () => {
-    const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseYear: 2023 };
+    const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseDate: new Date(2023, 11, 31, 23, 59, 59, 999) };
     movieService.getMovies().subscribe((movies) => {
       movies.push(newMovie);
       expect(movies.length).toBe(3);
@@ -65,7 +65,7 @@ describe('MovieCrudComponent', () => {
   });
 
   it('should update a movie', () => {
-    const updatedMovie: Movie = { id: 1, title: 'Updated Movie 1', director: 'Updated Director 1', releaseYear: 2021 };
+    const updatedMovie: Movie = { id: 1, title: 'Updated Movie 1', director: 'Updated Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999) };
     movieService.getMovies().subscribe((movies) => {
       movies[0] = updatedMovie;
       expect(movies[0]).toEqual(updatedMovie);
@@ -81,7 +81,7 @@ describe('MovieCrudComponent', () => {
 
   it('should reset the form', () => {
     component.resetForm();
-    expect(component.movie).toEqual({ id: 0, title: '', director: '', releaseYear: 0 });
+    expect(component.movie).toEqual({ id: 0, title: '', director: '', releaseDate: new Date() });
     expect(component.isEdit).toBeFalse();
   });
 });
