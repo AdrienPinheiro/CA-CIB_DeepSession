@@ -45,6 +45,8 @@ describe('MovieCrudComponent', () => {
 
   it('should fetch movies on init', () => {
     movieService.getMovies().subscribe((movies) => {
+      console.log("FETCH");
+      console.log(movies);
       expect(movies.length).toBe(2);
     });
   });
@@ -53,6 +55,8 @@ describe('MovieCrudComponent', () => {
     const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseDate: new Date(2023, 11, 31, 23, 59, 59, 999) };
     movieService.getMovies().subscribe((movies) => {
       movies.push(newMovie);
+      console.log("ADD");
+      console.log(movies);
       expect(movies.length).toBe(3);
       expect(movies).toContain(newMovie);
     });
@@ -75,13 +79,15 @@ describe('MovieCrudComponent', () => {
   it('should delete a movie', () => {
     movieService.getMovies().subscribe((movies) => {
       movies.splice(0, 1);
+      console.log("DELETE");
+      console.log(movies);
       expect(movies.length).toBe(2);
     });
   });
 
   it('should reset the form', () => {
     component.resetForm();
-    expect(component.movie).toEqual({ id: 0, title: '', director: '', releaseDate: new Date() });
+    expect(component.movie).toEqual({ id: 0, title: '', director: '', releaseDate: new Date(), version: 0 });
     expect(component.isEdit).toBeFalse();
   });
 });
