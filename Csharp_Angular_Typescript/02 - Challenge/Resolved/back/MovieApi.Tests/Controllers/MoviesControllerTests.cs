@@ -84,7 +84,7 @@ namespace MovieApi.Tests.Controllers
         }
 
         [Fact]
-        public async Task PutMovie_UpdatesExistingMovie()
+        public async Task PatchMovie_UpdatesExistingMovie()
         {
             // Arrange
             var movie = new Movie { Id = 1, Title = "Update Movie", Director = "abc", ReleaseDate = new System.DateTime(2021, 1, 1) };
@@ -93,7 +93,7 @@ namespace MovieApi.Tests.Controllers
             movie.Title = "Updated Movie Title";
 
             // Act
-            var result = await _controller.PutMovie(1, movie);
+            var result = await _controller.PatchMovie(1, movie);
 
             // Assert
             Assert.IsType<NoContentResult>(result);
