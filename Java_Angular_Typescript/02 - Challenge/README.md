@@ -6,20 +6,22 @@ This challenge is designed to help you understand and resolve issues in both the
 
 ## Table of Contents
 
-1. [Objective](#objective)
-2. [Context](#context)
-3. [Structure](#structure)
-   - [Back-end](#back-end)
-   - [Front-end](#front-end)
-4. [Tasks](#tasks)
-   - [Back-end Tasks](#back-end-tasks)
-   - [Front-end Tasks](#front-end-tasks)
-   - [Extra challenge](#extra-challenge)
-5. [Setup Instructions](#setup-instructions)
-   - [Back-end Setup](#back-end-setup)
-   - [Front-end Setup](#front-end-setup)
-6. [Testing](#testing)
-7. [Conclusion](#conclusion)
+- [Challenge README](#challenge-readme)
+  - [Table of Contents](#table-of-contents)
+  - [Objective](#objective)
+  - [Context](#context)
+  - [Setup Instructions](#setup-instructions)
+    - [Back-end Setup](#back-end-setup)
+    - [Front-end Setup](#front-end-setup)
+    - [Testing](#testing)
+  - [Structure](#structure)
+    - [Back-end](#back-end)
+    - [Front-end](#front-end)
+  - [Tasks](#tasks)
+    - [Back-end Tasks](#back-end-tasks)
+    - [Front-end Tasks](#front-end-tasks)
+  - [Extra challenge](#extra-challenge)
+- [Conclusion](#conclusion)
 
 ---
 
@@ -90,6 +92,7 @@ ng test (or 'npm test' if don't have Angular CLI)
 
 The back-end is a Spring Boot application with the following structure:
 
+```markdown
 back/ 
 ├── src/ 
 │ ├── main/ 
@@ -102,12 +105,13 @@ back/
 │ └── java/ # Unit and integration tests 
 ├── pom.xml # Maven configuration file 
 └── mvnw, mvnw.cmd # Maven wrapper scripts
-
+```
 
 ### Front-end
 
 The front-end is an Angular application with the following structure:
 
+```markdown
 front/ 
 ├── .vscode/ # VSCode settings 
 ├── src/ 
@@ -122,7 +126,7 @@ front/
 ├── package.json # NPM dependencies and scripts 
 ├── tsconfig.json # TypeScript configuration 
 └── tsconfig.spec.json # TypeScript configuration for tests
-
+```
 ---
 
 ## Tasks

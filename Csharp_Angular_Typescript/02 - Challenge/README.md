@@ -6,20 +6,22 @@ This challenge is designed to help you understand and resolve issues in both the
 
 ## Table of Contents
 
-1. [Objective](#objective)
-2. [Context](#context)
-3. [Structure](#structure)
-   - [Back-end](#back-end)
-   - [Front-end](#front-end)
-4. [Tasks](#tasks)
-   - [Back-end Tasks](#back-end-tasks)
-   - [Front-end Tasks](#front-end-tasks)
-   - [Extra challenge](#extra-challenge)
-5. [Setup Instructions](#setup-instructions)
-   - [Back-end Setup](#back-end-setup)
-   - [Front-end Setup](#front-end-setup)
-6. [Testing](#testing)
-7. [Conclusion](#conclusion)
+- [Challenge README](#challenge-readme)
+  - [Table of Contents](#table-of-contents)
+  - [Objective](#objective)
+  - [Context](#context)
+  - [Setup Instructions](#setup-instructions)
+    - [Back-end Setup](#back-end-setup)
+    - [Front-end Setup](#front-end-setup)
+    - [Testing](#testing)
+  - [Structure](#structure)
+    - [Back-end](#back-end)
+    - [Front-end](#front-end)
+  - [Tasks](#tasks)
+    - [Back-end Tasks](#back-end-tasks)
+    - [Front-end Tasks](#front-end-tasks)
+  - [Extra challenge](#extra-challenge)
+- [Conclusion](#conclusion)
 
 ---
 
@@ -46,8 +48,9 @@ The project is divided into two main parts:
 ## Setup Instructions
 
 ### Back-end Setup
+1. Just go in the `02-Challenge/back` folder  
 
-1. Install dependencies you need :
+2. Install dependencies you need :
 ```sh
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 dotnet add package Microsoft.EntityFrameworkCore.Tools
@@ -96,17 +99,21 @@ ng serve (or 'npm start' if don't have Angular CLI)
 
 Back-end Testing
 1. Navigate to MovieApi.Tests :
-cd MovieApi.Tests
+```
+cd 02-Challenge/MovieApi.Tests
+```
 
-1. Run back-end tests:
+2. Run back-end tests:
 
+```
 dotnet tests
+```
 
-Front-end Testing
-Run front-end tests:
+3. Run Front-end tests :
 
+```
 ng test (or 'npm test' if don't have Angular CLI)
-
+```
 ---
 
 ## Structure
@@ -114,7 +121,7 @@ ng test (or 'npm test' if don't have Angular CLI)
 ### Back-end
 
 The back-end is a MVC application with the following structure:
-
+```markdown
 back/ 
 ├── MovieApi/ 
 │ ├── Controllers/ # Controllers
@@ -124,12 +131,13 @@ back/
 │ ├── Properties/ # Configuration files
 │ ├── Program.cs # Configuration & startup file
 │ └── test/ 
+```
 
 
 ### Front-end
 
 The front-end is an Angular application with the following structure:
-
+```markdown
 front/ 
 ├── .vscode/ # VSCode settings 
 ├── src/ 
@@ -144,7 +152,7 @@ front/
 ├── package.json # NPM dependencies and scripts 
 ├── tsconfig.json # TypeScript configuration 
 └── tsconfig.spec.json # TypeScript configuration for tests
-
+```
 ---
 
 ## Tasks
