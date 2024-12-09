@@ -15,7 +15,7 @@ import { Movie } from '../../models/movie.model';
 })
 export class MovieCrudComponent implements OnInit {
   movies: Movie[] = [];
-  movie: Movie = { title: '', director: '', releaseYear: 0 };
+  movie: Movie = { title: '', director: '', release_year: 0 };
   isEdit = false;
 
   constructor(private movieService: MovieService) {}
@@ -58,7 +58,7 @@ export class MovieCrudComponent implements OnInit {
   }
 
   resetForm(): void {
-    this.movie = { id: 0, title: '', director: '', releaseYear: 0, version: 0 };
+    this.movie = { id: 0, title: '', director: '', release_year: 0, version: 0 };
     this.isEdit = false;
   }
 }

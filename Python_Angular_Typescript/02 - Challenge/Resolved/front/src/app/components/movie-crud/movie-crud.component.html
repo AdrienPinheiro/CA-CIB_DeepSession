@@ -3,7 +3,7 @@
     <form (ngSubmit)="isEdit ? updateMovie() : addMovie()">
       <input type="text" [(ngModel)]="movie.title" name="title" placeholder="Title" required />
       <input type="text" [(ngModel)]="movie.director" name="director" placeholder="Director" required />
-      <input type="number" [(ngModel)]="movie.releaseYear" name="releaseYear" placeholder="releaseYear" required />
+      <input type="number" [(ngModel)]="movie.release_year" name="release_year" placeholder="release_year" required />
       <button type="submit">{{ isEdit ? 'Update' : 'Add' }} Movie</button>
       <button type="button" (click)="resetForm()">Cancel</button>
     </form>
@@ -11,7 +11,7 @@
     <div class="movie-list">
       <div *ngFor="let movie of movies" class="movie-item">
         <h2>{{ movie.title }}</h2>
-        <p>{{ movie.director }} - {{ movie.releaseYear }}</p>
+        <p>{{ movie.director }} - {{ movie.release_year }}</p>
         <button (click)="editMovie(movie)">Edit</button>
         <button (click)="deleteMovie(movie.id ?? 0)">Delete</button>
       </div>
