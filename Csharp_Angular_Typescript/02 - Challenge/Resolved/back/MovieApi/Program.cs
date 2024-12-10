@@ -34,6 +34,11 @@ if (app.Environment.IsDevelopment())
     });
     app.UseCors("AllowSpecificOrigin");
 }
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
 //Be sure to disable this line when testing in local
 // app.UseHttpsRedirection();
