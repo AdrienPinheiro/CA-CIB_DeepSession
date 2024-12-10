@@ -25,7 +25,12 @@ class MovieRepository:
         if movie.id is None:
             movie.id = self.current_id
             self.current_id += 1
-        self.movies.append(movie)
+            self.movies.append(movie)
+        else:
+            for i, existing_movie in enumerate(self.movies):
+                if existing_movie.id == movie.id:
+                    self.movies[i] = movie
+                    break
         return movie
 
     def delete_by_id(self, movie_id: int) -> None:
