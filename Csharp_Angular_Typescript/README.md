@@ -1,10 +1,10 @@
 # 🚀Deep Dive Session (C#, Angular, TypeScript)🚀
 
-Welcome to the Deep Dive Session focused on C#, Angular, and TypeScript. This session is designed to help you learn and leverage the features of GitHub Copilot through hands-on exercises and challenges.
+Welcome to the Deep Dive Session focused on C#, Angular, and TypeScript. This session is designed to help you learn and leverage the features of GitHub Copilot through hands-on exercises and challenges.The `Resolved` folder is provided as a reference to support you on those execises and challenge.
 
 ## Pre-requisites
 
-- VS Code or IntelliJ IDEA
+- VS Code, Visual Studio, IntelliJ IDEA
 - .NET 8.0.206
 - Sqlite
 - EntityFrameworkCore (Tools & Design)

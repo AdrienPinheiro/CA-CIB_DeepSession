@@ -25,9 +25,8 @@ public class IntegrationTestSolution
     [Fact]
     public void TestDaysBetween_InvalidDateFormat()
     {
-        var result = _controller.DaysBetween("2023-01-01", "invalid-date") as BadRequestObjectResult;
-        Assert.NotNull(result);
-        Assert.Equal("System.FormatException : Invalid date format. Use YYYY-MM-DD.", result.Value);
+        var result = Assert.Throws<FormatException>(() => _controller.DaysBetween("2023-01-01", "invalid-date"));
+        Assert.Equal("Invalid date format. Use YYYY-MM-DD.", result.Message);
     }
 
     [Fact]

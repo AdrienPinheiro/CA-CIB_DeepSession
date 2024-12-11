@@ -9,7 +9,6 @@ Learn how to use **GitHub Copilot** and its commands like `/explain` and `/fix` 
 
 ### **Task Description**
 
-In this task, you will improve an existing Spring Boot controller by:
 1. **Refactoring Duplicate Code**: Use GitHub Copilot to detect repetitive code and suggest refactoring.
 2. **Fixing a Bug**: There is a deliberate bug in the `/days-between` endpoint. Use Copilot's `/fix` command to detect and fix it.
 3. **Improving Readability and Maintainability**: Use GitHub Copilot to clean up the code, refactor methods, and add better error handling.
@@ -81,7 +80,7 @@ In this task, you will improve an existing Spring Boot controller by:
 ---
 
 ### **Testing Instructions**
-1. Run the Spring Boot application.
+1. Run the dotnet application.
 2. Test the `/days-between` endpoint:
    - **Valid input**: Test with `startDate=2023-01-01` and `endDate=2023-01-10`.
    - **Invalid input**: Test with missing date parameters, invalid date formats, or a `startDate` that’s after the `endDate` to ensure proper error handling.
