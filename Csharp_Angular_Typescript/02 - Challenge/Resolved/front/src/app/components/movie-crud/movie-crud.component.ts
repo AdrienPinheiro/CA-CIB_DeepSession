@@ -15,8 +15,8 @@ import { Movie } from '../../models/movie.model';
 })
 export class MovieCrudComponent implements OnInit {
   movies: Movie[] = [];
-  movie: Movie = { title: '', director: '', releaseDate: new Date() };
-  isEdit = false;
+  movie: Movie = { id: 0, title: '', director: '', releaseDate: new Date(), version: 0 };
+  isEdit: boolean = false;
 
   constructor(private movieService: MovieService) {}
 

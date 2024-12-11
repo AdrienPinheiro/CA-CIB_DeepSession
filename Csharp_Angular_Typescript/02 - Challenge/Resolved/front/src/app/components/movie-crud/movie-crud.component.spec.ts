@@ -10,12 +10,14 @@ describe('MovieCrudComponent', () => {
   let component: MovieCrudComponent;
   let fixture: ComponentFixture<MovieCrudComponent>;
   let movieService: MovieService;
-  const mockMovies: Movie[] = [
-    { id: 1, title: 'Movie 1', director: 'Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999) },
-    { id: 2, title: 'Movie 2', director: 'Director 2', releaseDate: new Date(2022, 11, 31, 23, 59, 59, 999) }
-  ];
+  let mockMovies: Movie[];
 
   beforeEach(async () => {
+    mockMovies = [
+      { id: 1, title: 'Movie 1', director: 'Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999) },
+      { id: 2, title: 'Movie 2', director: 'Director 2', releaseDate: new Date(2022, 11, 31, 23, 59, 59, 999) }
+    ];
+
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, FormsModule, MovieCrudComponent],
       providers: [MovieService]
@@ -33,25 +35,37 @@ describe('MovieCrudComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  beforeEach((done) => {
+    setTimeout(() => {
+      done();
+    }, 250);
   });
 
-  it('should mock getMovies service', () => {
+
+  it('should create', (done) => {
+    expect(component).toBeTruthy();
+    done();
+  });
+
+  it('should mock getMovies service', (done) => {
     movieService.getMovies().subscribe((movies) => {
       expect(movies).toEqual(mockMovies); // Verify that the mock works
+      done();
     });
   });
 
-  it('should fetch movies on init', () => {
+  it('should fetch movies on init', (done) => {
     movieService.getMovies().subscribe((movies) => {
       console.log("FETCH");
       console.log(movies);
-      expect(movies.length).toBe(2);
+      console.log(movies.length)
+      console.log("END_FETCH");
+      expect(movies.length).toBe(2); // Update the expected value to 2
+      done();
     });
   });
 
-  it('should add a movie', () => {
+  it('should add a movie', (done) => {
     const newMovie: Movie = { id: 3, title: 'Movie 3', director: 'Director 3', releaseDate: new Date(2023, 11, 31, 23, 59, 59, 999) };
     movieService.getMovies().subscribe((movies) => {
       movies.push(newMovie);
@@ -59,35 +73,40 @@ describe('MovieCrudComponent', () => {
       console.log(movies);
       expect(movies.length).toBe(3);
       expect(movies).toContain(newMovie);
+      done();
     });
   });
 
-  it('should edit a movie', () => {
+  it('should edit a movie', (done) => {
     component.editMovie(mockMovies[0]);
     expect(component.movie).toEqual(mockMovies[0]);
     expect(component.isEdit).toBeTrue();
+    done();
   });
 
-  it('should update a movie', () => {
+  it('should update a movie', (done) => {
     const updatedMovie: Movie = { id: 1, title: 'Updated Movie 1', director: 'Updated Director 1', releaseDate: new Date(2021, 11, 31, 23, 59, 59, 999) };
     movieService.getMovies().subscribe((movies) => {
       movies[0] = updatedMovie;
       expect(movies[0]).toEqual(updatedMovie);
+      done();
     });
   });
 
-  it('should delete a movie', () => {
+  it('should delete a movie', (done) => {
     movieService.getMovies().subscribe((movies) => {
       movies.splice(0, 1);
       console.log("DELETE");
       console.log(movies);
-      expect(movies.length).toBe(2);
+      expect(movies.length).toBe(1);
+      done();
     });
   });
 
-  it('should reset the form', () => {
+  it('should reset the form', (done) => {
     component.resetForm();
     expect(component.movie).toEqual({ id: 0, title: '', director: '', releaseDate: new Date(), version: 0 });
     expect(component.isEdit).toBeFalse();
+    done();
   });
 });
