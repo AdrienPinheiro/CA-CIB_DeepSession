@@ -1,0 +1,38 @@
+# .NET 8
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.nuget
+*.snupkg
+*.nupkg
+*.log
+*.user
+*.lock.json
+*.csproj.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+.idea/*
+
+# WebStorm
+.idea/
+*.iml
+*.iws
+.idea/*
+
+# Rider
+.idea/
+*.iml
+*.iws
+.idea/*
