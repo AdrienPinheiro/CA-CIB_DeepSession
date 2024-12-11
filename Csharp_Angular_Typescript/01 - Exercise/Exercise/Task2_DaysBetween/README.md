@@ -62,9 +62,9 @@ Exercise/
   
 3. **Generate the unit tests**:
    - Open the chat window and use the `/tests` command to generate unit tests for the endpoint. You will need to tag `@workspace` to give your assistant access to the project files.
-   - Review the generated tests and run them to validate the endpoint's functionality.
+   - Review the generated tests and run them to validate the endpoint's functionality inside the folder `TaskTest`.
     ```
-      cd 01 - Exercise/
+      cd 01 - Exercise/TaskTest
       dotnet test
     ```
 
