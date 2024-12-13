@@ -133,6 +133,10 @@ The project is divided into two main parts:
   venv\Scripts\activate       # On Windows
   ```
 
+  To start the application :
+
+  uvicorn src.app:app --reload
+
 ### Front-end Setup
 
 1. Navigate to the front folder:
@@ -152,7 +156,7 @@ ng serve (or 'npm start' if don't have Angular CLI)
 Back-end Testing
 1. Run back-end tests:
 
-./mvnw test
+pytest tests
 
 Front-end Testing
 Run front-end tests:
