@@ -12,7 +12,7 @@ describe('MovieCrudComponent', () => {
   let movieService: MovieService;
   const mockMovies: Movie[] = [
     { id: 1, title: 'Movie 1', director: 'Director 1', release_year: 2021 },
-    { id: 2, title: 'Movie 2', director: 'Director 2', relearelease_yearseYear: 2022 }
+    { id: 2, title: 'Movie 2', director: 'Director 2', release_year: 2022 }
   ];
 
   beforeEach(async () => {
